@@ -36,9 +36,10 @@ namespace VidHub.Controllers
             return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
         }
 
-        public ActionResult ByReleaseDate(int year, int month)
+        [Route("movies/released/{year:regex(\\d{4}):range(2000, 2025)}/{month:regex(\\d{2}):range(1, 12)}")]
+        public ActionResult ByReleaseYear(int year, int month)
         {
-            return Content("Year / Month: " + year + "/" + month);
+            return Content("ByReleaseYear - Year / Month: " + year + "/" + month);
         }
     }
 }
