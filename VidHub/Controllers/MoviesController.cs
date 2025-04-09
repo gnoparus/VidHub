@@ -14,7 +14,12 @@ namespace VidHub.Controllers
         {
             var movie = new Movie() { Title = "The Keng 2022!" };
 
-            return View(movie);
+            //return View(movie);
+            //return Content("Hello Keng");
+            //return HttpNotFound("Movie not found");
+            //return new EmptyResult();
+
+            return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
         }
     }
 }
