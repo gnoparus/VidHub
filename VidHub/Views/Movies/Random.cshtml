@@ -1,8 +1,11 @@
-﻿@model VidHub.Models.Movie
+﻿@using VidHub.Models
+@model VidHub.Models.Movie
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Title</h2>
 
+
+@*<h2>@Model.Title</h2>*@
+<h2>@(((Movie)ViewData["Movie"]).Title)</h2>
