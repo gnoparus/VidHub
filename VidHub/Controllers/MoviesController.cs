@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VidHub.Models;
+using VidHub.ViewModels;
 
 namespace VidHub.Controllers
 {
@@ -12,11 +13,22 @@ namespace VidHub.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() { Title = "The Keng 2022! Model" };
+            var movie = new Movie() { Title = "The Keng 2022! ViewModel" };
+
+            var customers = new List<Customer>
+            {
+                new Customer { Id = 1, Name = "Keng" },
+                new Customer { Id = 2, Name = "Keng 2" },
+                new Customer { Id = 3, Name = "Keng 3" }
+            };
+            var viewModel = new RandomMovieViewModel { Movie = movie, Customers = customers };
+            return View(viewModel);
+
+            //return View(movie);
+
 
             //ViewData["Movie"] = movie;
             //ViewBag.Movie = movie;
-            return View(movie);
 
             //return View();
             //return Content("Hello Keng");
