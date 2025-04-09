@@ -12,10 +12,10 @@ namespace VidHub.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() { Title = "The Keng 2022! from ViewData" };
+            var movie = new Movie() { Title = "The Keng 2022! via ViewBag" };
 
-            ViewData["Movie"] = movie;
-
+            //ViewData["Movie"] = movie;
+            ViewBag.Movie = movie;
 
             return View();
             //return Content("Hello Keng");
