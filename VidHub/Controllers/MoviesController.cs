@@ -21,5 +21,9 @@ namespace VidHub.Controllers
 
             return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });
         }
+        public ActionResult Edit(int id)
+        {
+            return Content("id=" + id);
+        }
     }
 }
